@@ -3,16 +3,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_task3/presentation/screens/FavoriteScreen.dart';
 import 'package:flutter_task3/presentation/screens/MainScreen.dart';
-import 'package:flutter_task3/presentation/screens/ProfileScreen.dart';
+import 'package:flutter_task3/presentation/ProfileScreen.dart';
 
-class RoutingScreen extends StatefulWidget {
-  const RoutingScreen({super.key});
+class MainRouter extends StatefulWidget {
+  const MainRouter({super.key});
 
   @override
-  State<RoutingScreen> createState() => _RoutingScreenState();
+  State<MainRouter> createState() => _MainRouterState();
 }
 
-class _RoutingScreenState extends State<RoutingScreen> {
+class _MainRouterState extends State<MainRouter> {
 
   int _selectedIndex = 0;
   void _onItemTapped(int index) {

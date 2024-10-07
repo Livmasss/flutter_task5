@@ -44,16 +44,16 @@ class _ProductWidgetState extends State<ProductWidget> {
         child: Padding(
           padding: const EdgeInsets.all(10),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Image.network(
-                product.imageUri,
-                width: 50,
-                height: 50,
-                fit: BoxFit.cover,
-              ),
               Row(
                 children: [
-                  Text("${product.cost}₽"),
+                  Image.network(
+                    product.imageUri,
+                    width: 70,
+                    height: 70,
+                    fit: BoxFit.cover,
+                  ),
                   const Spacer(),
                   IconButton(
                     onPressed: () {
@@ -61,12 +61,13 @@ class _ProductWidgetState extends State<ProductWidget> {
                         product.isFavorite = !product.isFavorite;
                       });
                     },
-                    icon: Icon(getFavoriteIconData())
-                  )
+                      icon: Icon(getFavoriteIconData())
+                  ),
                 ],
               ),
-              Text(product.title, overflow: TextOverflow.clip),
-              Text(product.subtitle, overflow: TextOverflow.clip),
+              Text("${product.cost}₽"),
+              Text(product.title, maxLines: 1, overflow: TextOverflow.ellipsis),
+              Text(product.subtitle, maxLines: 2, overflow: TextOverflow.ellipsis),
             ],
           ),
         ),
