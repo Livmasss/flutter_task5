@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_task3/data/StaticData.dart';
+
+import '../widgets/ProductWidget.dart';
+import 'ProductDetailsScreen.dart';
 
 class FavoriteScreen extends StatefulWidget {
   const FavoriteScreen({super.key});
@@ -8,8 +12,35 @@ class FavoriteScreen extends StatefulWidget {
 }
 
 class _FavoriteScreenState extends State<FavoriteScreen> {
+  var products = [];
+
+  @override
+  void initState() {
+    super.initState();
+    products.addAll(initialProducts.where((element) => element.isFavorite));
+  }
+
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      body: GridView.builder(
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+        itemCount: products.length,
+        itemBuilder: (BuildContext context, int index) {
+          var product = products[index];
+          return ProductWidget(
+            product: product,
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => ProductDetailScreen(product: product),
+                ),
+              );
+            },
+          );
+        },
+      ),
+    );
   }
 }

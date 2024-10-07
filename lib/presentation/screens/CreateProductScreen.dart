@@ -67,7 +67,8 @@ class _CreateProductScreenState extends State<CreateProductScreen> {
                       title,
                       subtitle,
                       imageLink,
-                      price
+                      price,
+                      false
                   )
                 );
 

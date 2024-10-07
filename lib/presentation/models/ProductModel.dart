@@ -1,10 +1,11 @@
 class ProductModel {
-  const ProductModel(
+  ProductModel(
       this.id,
       this.title,
       this.subtitle,
       this.imageUri,
-      this.cost
+      this.cost,
+      this.isFavorite,
       );
 
   final int? id;
@@ -12,4 +13,5 @@ class ProductModel {
   final String subtitle;
   final String imageUri;
   final double cost;
+  bool isFavorite = false;
 }
