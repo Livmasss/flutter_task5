@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_task3/presentation/screens/MainScreen.dart';
+import 'package:flutter_task3/presentation/screens/RoutingScreen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MainScreen()
+      home: const RoutingScreen()
     );
   }
 }
